@@ -1104,7 +1104,6 @@ abstract class BaseAdmin extends BaseController
 
                     foreach ($data as $key => $item){
 
-
                         if ((!empty($this->fileArray[$key]) && is_array($this->fileArray[$key])) || !empty($_POST['js-sorting'])){
 
                             $fileArr = json_decode($item);
