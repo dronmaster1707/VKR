@@ -1100,6 +1100,7 @@ abstract class BaseAdmin extends BaseController
 
                 if ($data){
 
+
                     $data = $data[0];
 
                     foreach ($data as $key => $item){
