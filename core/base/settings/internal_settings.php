@@ -7,18 +7,28 @@ const MS_MODE = false;
 const TEMPLATE = 'templates/default/';
 const ADMIN_TEMPLATE = 'core/admin/view/';
 const UPLOAD_DIR = 'userfiles/';
-const DEFAULT_IMAGE_DIRECTORY = 'default_images';
+const DEFAULT_IMGAGE_DIRECTORY = 'default_images';
+
 const COOKIE_VERSION = '1.0.0';
-const CRYPT_KEY = '32RDD1Mk70qt0YyuMtQ0s/iuWyd7gKclrQ8h5uSXPGWyST5MXmEswkLEVdWbmKyo';
+const CRYPT_KEY = '-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8-JaNdRgUkXp2s5v8';
 const COOKIE_TIME = 60;
 const BLOCK_TIME = 3;
+
+const END_SLASH = '/';
 const QTY = 8;
 const QTY_LINKS = 3;
-const  ADMIN_CSS_JS = [
+
+const CART = 'cookie';
+
+const ADMIN_CSS_JS = [
     'styles' => ['css/main.css'],
-    'scripts' => ['js/frameworkfunctions.js', 'js/scripts.js'],
+    'scripts' => [
+        'js/frameworkfunctions.js', 'js/scripts.js', 'js/tinymce/tinymce.min.js',
+        'js/tinymce/tinymce_init.js'
+    ]
 ];
-const  USER_CSS_JS = [
+
+const USER_CSS_JS = [
     'styles' => [
         'https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic',
         'https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic',
@@ -26,7 +36,7 @@ const  USER_CSS_JS = [
         'https://unpkg.com/swiper/swiper-bundle.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css',
         'assets/css/animate.css',
-        'assets/css/style.css'
+        'assets/css/style.css',
     ],
     'scripts' => [
         'https://code.jquery.com/jquery-3.4.1.min.js',
@@ -44,17 +54,27 @@ const  USER_CSS_JS = [
         'assets/js/animation.gsap.min.js',
         'assets/js/bodyscrolllock/bodyScrollLock.min.js',
         'assets/js/app.js',
-        'assets/js/script.js'
-
+        'assets/js/script.js',
+        'assets/js/showMessage.js',
     ]
 ];
+
 use core\base\exceptions\RouteException;
-function autoloadMainCLasses($class_name)
-{
-    $class_name = str_replace('\\','/',$class_name);
+
+function autoloadMainClasses($class_name){
+
+    $class_name = str_replace('\\', '/', $class_name);
 
     if(!@include_once $class_name . '.php'){
-        throw new RouteException('Не верное имя файла для подключения -'.$class_name);
+        throw new RouteException('Не верное имя файла для подключения - '.$class_name);
     }
+
 }
-spl_autoload_register('autoloadMainCLasses');
+
+spl_autoload_register('autoloadMainClasses');
+
+if(is_readable('vendor/autoload.php')){
+
+    include 'vendor/autoload.php';
+
+}

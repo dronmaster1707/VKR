@@ -2,6 +2,7 @@
 
 namespace core\base\model;
 
+
 use core\base\controller\Singleton;
 
 class Crypt
@@ -13,12 +14,11 @@ class Crypt
     private $hashAlgoritm = 'sha256';
     private $hashLength = 32;
 
-
     public function encrypt($str){
 
-        $ivLen = openssl_cipher_iv_length($this->cryptMethod);
+        $ivlen = openssl_cipher_iv_length($this->cryptMethod);
 
-        $iv = openssl_random_pseudo_bytes($ivLen);
+        $iv = openssl_random_pseudo_bytes($ivlen);
 
         $cipherText = openssl_encrypt($str, $this->cryptMethod, CRYPT_KEY, OPENSSL_RAW_DATA, $iv);
 
@@ -28,7 +28,7 @@ class Crypt
 
     }
 
-    public function dёecrypt($str){
+    public function decrypt($str){
 
         $ivlen = openssl_cipher_iv_length($this->cryptMethod);
 
@@ -38,7 +38,7 @@ class Crypt
 
         $calcmac = hash_hmac($this->hashAlgoritm, $crypt_data['str'], CRYPT_KEY, true);
 
-        if (hash_equals($crypt_data['hmac'], $calcmac)) return $original_plaintext;
+        if(hash_equals($crypt_data['hmac'], $calcmac)) return $original_plaintext;
 
         return false;
 
@@ -54,13 +54,13 @@ class Crypt
 
         $progress = 1;
 
-        if ($counter >= $str_len) $counter = 1;
+        if($counter >= $str_len) $counter = 1;
 
-        for ($i = 0; $i < $str_len; $i++) {
+        for ($i = 0; $i < $str_len; $i++){
 
-            if ($counter < $str_len){
+            if($counter < $str_len){
 
-                if ($counter === $i){
+                if($counter === $i){
 
                     $new_str .= substr($iv, $progress - 1, 1);
                     $progress++;
@@ -83,7 +83,7 @@ class Crypt
 
         $new_str_half = (int)ceil(strlen($new_str) / 2);
 
-        $new_str = substr($new_str, 0, $new_str_half) . $hmac . substr($new_str, $new_str_half);
+        $new_str = substr($new_str, 0, $new_str_half) . $hmac. substr($new_str, $new_str_half);
 
         return base64_encode($new_str);
 
@@ -91,54 +91,53 @@ class Crypt
 
     protected function cryptUnCombine($str, $ivlen){
 
-    $crypt_data = [];
+        $crypt_data = [];
 
-    $str = base64_decode($str);
+        $str = base64_decode($str);
 
-    $hash_position = (int)ceil(strlen($str) / 2 - $this->hashLength / 2);
+        $hash_position = (int)ceil(strlen($str) / 2 - $this->hashLength / 2);
 
-    $crypt_data['hmac'] = substr($str, $hash_position, $this->hashLength);
+        $crypt_data['hmac'] = substr($str, $hash_position, $this->hashLength);
 
-    $str = str_replace($crypt_data['hmac'], '', $str);
+        $str = str_replace($crypt_data['hmac'], '', $str);
 
-    $counter = (int)ceil(strlen(CRYPT_KEY) / (strlen($str) - $ivlen + $this->hashLength));
+        $counter = (int)ceil(strlen(CRYPT_KEY) / (strlen($str) - $ivlen + $this->hashLength));
 
-    $progress = 2;
+        $progress = 2;
 
-    $crypt_data['str'] = '';
-    $crypt_data['iv'] = '';
+        $crypt_data['str'] = '';
+        $crypt_data['iv'] = '';
 
-    for ($i = 0; $i < strlen($str); $i++) {
+        for($i = 0; $i < strlen($str); $i++){
 
-        if ($ivlen + strlen($crypt_data['str']) < strlen($str)){
+            if($ivlen + strlen($crypt_data['str']) < strlen($str)){
 
-            if ($i === $counter){
+                if($i === $counter){
 
-                $crypt_data['iv'] .= substr($str, $counter, 1);
-                $progress++;
-                $counter += $progress;
+                    $crypt_data['iv'] .= substr($str, $counter, 1);
+                    $progress++;
+                    $counter += $progress;
 
+                }else{
+
+                    $crypt_data['str'] .= substr($str, $i, 1);
+
+                }
 
             }else{
 
-                $crypt_data['str'] .= substr($str, $i, 1);
+                $crypt_data_len = strlen($crypt_data['str']);
+
+                $crypt_data['str'] .= substr($str, $i, strlen($str) - $ivlen - $crypt_data_len);
+                $crypt_data['iv'] .= substr($str, $i + (strlen($str) - $ivlen - $crypt_data_len));
+
+                break;
 
             }
 
-        }else{
-
-            $crypt_data_len = strlen($crypt_data['str']);
-
-            $crypt_data['str'] .= substr($str, $i, strlen($str) - $ivlen - $crypt_data_len);
-            $crypt_data['iv'] .= substr($str, $i + (strlen($str) - $ivlen - $crypt_data_len));
-
-            break;
-
         }
 
-    }
-
-    return $crypt_data;
+        return $crypt_data;
 
     }
 

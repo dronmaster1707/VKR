@@ -471,3 +471,11 @@ Fault: 13-06-2024 14:51:44 - Ошибка в SQL запросе: SELECT goods.*,
 fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\model\BaseModel.php
 In line 38
 
+Fault: 13-06-2024 22:19:28 - Ошибка в SQL запросе: SELECT settings.* FROM settings   ORDER BY settings.id ASC LIMIT 1 - 1146 Table 'im.settings' doesn't exist
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\model\BaseModel.php
+In line 41
+
+Fault: 13-06-2024 22:36:08 - Ошибка в SQL запросе: SELECT settings.* FROM settings   ORDER BY settings.id ASC LIMIT 1 - 1146 Table 'im.settings' doesn't exist
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\model\BaseModel.php
+In line 41
+

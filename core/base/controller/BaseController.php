@@ -1,18 +1,31 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: developer
+ * Date: 04.02.2019
+ * Time: 18:10
+ */
 
 namespace core\base\controller;
 
+
 use core\base\exceptions\RouteException;
+use core\base\model\UserModel;
 use core\base\settings\Settings;
+
+
 abstract class BaseController
 {
+
     use \core\base\controller\BaseMethods;
 
     protected $header;
     protected $content;
     protected $footer;
     protected $page;
+
     protected $errors;
+
     protected $controller;
     protected $inputMethod;
     protected $outputMethod;
@@ -26,13 +39,13 @@ abstract class BaseController
     protected $data;
     protected $ajaxData;
 
-    public function route()
-    {
-        $controller = str_replace('/','\\', $this->controller);
-        //reflection - расширение позволяющее получить доступ к информации о класссах, методах, свойствах, может вызывать методы класса
+    public function route(){
 
-        try {
-            $object = new \ReflectionMethod( $controller, 'request');//проверяем существует ли метод request в классе $controller
+        $controller = str_replace('/', '\\', $this->controller);
+
+        try{
+
+            $object = new \ReflectionMethod($controller, 'request');
 
             $args = [
                 'parameters' => $this->parameters,
@@ -40,13 +53,16 @@ abstract class BaseController
                 'outputMethod' => $this->outputMethod
             ];
 
-            $object->invoke(new $controller, $args); //вызываем метод request на исполнение
+            $object->invoke(new $controller, $args);
         }
-        catch (\ReflectionException $e){ //если вызвать нельзя
+        catch (\ReflectionException $e){
             throw new RouteException($e->getMessage());
         }
+
     }
-    public function request ($args){
+
+    public function request($args){
+
         $this->parameters = $args['parameters'];
 
         $inputData = $args['inputMethod'];
@@ -59,14 +75,12 @@ abstract class BaseController
             $page = $this->$outputData($data);
             if($page) $this->page = $page;
 
-        }
-        elseif($data){
-             $this->page = $data;
+        }elseif($data){
+            $this->page = $data;
         }
 
-        //в page прийдет готовая страница
 
-        if ($this->errors){
+        if($this->errors){
             $this->writeLog($this->errors);
         }
 
@@ -75,61 +89,79 @@ abstract class BaseController
 
     protected function render($path = '', $parameters = []){
 
-        extract($parameters);
+       extract($parameters);
 
-        if(!$path){
+       if(!$path){
 
-            $class = new \ReflectionClass($this);
+           $class = new \ReflectionClass($this);
 
-            $space = str_replace('\\','/',$class->getNamespaceName() . '\\');
-            $routes = Settings::get('routes');
+           $space = str_replace('\\', '/', $class->getNamespaceName() . '\\');
+           $routes = Settings::get('routes');
 
-            if($space === $routes['user']['path']) $template = TEMPLATE;
-            else  $template = ADMIN_TEMPLATE;
+           if($space === $routes['user']['path']) $template = TEMPLATE;
+                else $template = ADMIN_TEMPLATE;
 
-            $path = $template . explode('controller', strtolower($class->getShortName()))[0];
-        }//explode разбивает строку на массив, strtolower() переводит строку в нижний регистр
+           $path = $template . $this->getController();
+       }
 
+       ob_start();
 
-        ob_start();//открываем буфер
+       if(!include $path . '.php') throw new RouteException('Отсутствует шаблон - '.$path);
 
-        if(!@include_once $path . '.php') throw new RouteException('Отсутствует шаблон - '.$path);
+       return ob_get_clean();
 
-        return ob_get_clean();//возвращаем template и закрываем буфер
     }
 
     protected function getPage(){
 
         if(is_array($this->page)){
             foreach ($this->page as $block) echo $block;
-        } else {
+        }else{
             echo $this->page;
         }
-        exit();
-        //отображаем страницу
-    }
+        exit;
 
+    }
 
     protected function init($admin = false){
 
         if(!$admin){
             if(USER_CSS_JS['styles']){
-                foreach (USER_CSS_JS['styles'] as $item)
+                foreach(USER_CSS_JS['styles'] as $item)
                     $this->styles[] = (!preg_match('/^\s*https?:\/\//i', $item) ? PATH . TEMPLATE : '') . trim($item, '/');
             }
+
             if(USER_CSS_JS['scripts']){
-                foreach (USER_CSS_JS['scripts'] as $item)
+                foreach(USER_CSS_JS['scripts'] as $item)
                     $this->scripts[] = (!preg_match('/^\s*https?:\/\//i', $item) ? PATH . TEMPLATE : '') . trim($item, '/');
             }
         }else{
             if(ADMIN_CSS_JS['styles']){
-                foreach (ADMIN_CSS_JS['styles'] as $item)
+                foreach(ADMIN_CSS_JS['styles'] as $item)
                     $this->styles[] = (!preg_match('/^\s*https?:\/\//i', $item) ? PATH . ADMIN_TEMPLATE : '') . trim($item, '/');
             }
+
             if(ADMIN_CSS_JS['scripts']){
-                foreach (ADMIN_CSS_JS['scripts'] as $item)
+                foreach(ADMIN_CSS_JS['scripts'] as $item)
                     $this->scripts[] = (!preg_match('/^\s*https?:\/\//i', $item) ? PATH . ADMIN_TEMPLATE : '') . trim($item, '/');
             }
         }
+
     }
+
+    protected function checkAuth($type = false){
+
+        if(!($this->userId = UserModel::instance()->checkUser(false, $type))){
+
+            $type && $this->redirect(PATH);
+
+        }
+
+        $this->userData = $this->userId;
+
+        if(property_exists($this, 'userModel'))
+            $this->userModel = UserModel::instance();
+
+    }
+
 }

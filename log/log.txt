@@ -2752,3 +2752,727 @@ Fault: 13-06-2024 21:16:12 - Не верное имя файла для подк
 fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
 In line 57
 
+Fault: 13-06-2024 22:16:51 - Не верное имя файла для подключения -core/base/model/UserModel
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 57
+
+Fault: 13-06-2024 22:18:43 - Не верное имя файла для подключения -core/base/exceptions/AuthException
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 57
+
+Fault: 13-06-2024 22:39:04 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:39:05 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:40:59 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:41:35 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:43:14 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:43:31 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:31 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:31 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:32 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:57 - Отсутствует товар по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\ProductController.php
+In line 26
+
+Fault: 13-06-2024 22:45:57 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:57 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:45:57 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:46:50 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:44 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:44 - Отсутствует товар по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\ProductController.php
+In line 26
+
+Fault: 13-06-2024 22:47:44 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:44 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:50 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:57 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:47:58 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:51:21 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:51:59 - Отсутствует шаблон - templates/default/orders
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\controller\BaseController.php
+In line 109
+
+Fault: 13-06-2024 22:52:52 - Отсутствует шаблон - templates/default/orders
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\controller\BaseController.php
+In line 109
+
+Fault: 13-06-2024 22:52:55 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:52:55 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:53:20 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:53:20 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:53:25 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:53:25 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:57:08 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:57:09 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:57:23 - Отсутствует шаблон - templates/default/orders
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\controller\BaseController.php
+In line 109
+
+Fault: 13-06-2024 22:57:37 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 22:57:37 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:00:54 - Отсутствует шаблон - templates/default/orders
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\controller\BaseController.php
+In line 109
+
+Fault: 13-06-2024 23:01:00 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:01:00 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:01:28 - Не верное имя файла для подключения - PHPMailer/PHPMailer/PHPMailer
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:41 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:42 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:43 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:43 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:49 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 13-06-2024 23:11:50 - Не верное имя файла для подключения - core/user/controller/TemplatesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:40 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:40 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:43 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:44 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:45 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:45 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:45 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:49 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:00:49 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:01:24 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 14:01:24 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:36 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:36 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:38 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:38 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:44 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:44 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:46 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:46 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:52 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:52 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:53 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:53 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:56 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:56 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:16:56 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:17:38 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:17:38 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:17:38 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:21:51 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:21:51 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:21:51 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:21:53 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:21:53 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:19 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:19 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:34 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:34 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:34 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:35 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:35 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:36 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:36 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:48 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:48 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:48 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:22:49 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:33 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:33 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:34 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:36 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:36 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:36 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:36 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:37 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:37 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:37 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:26:47 - Не найдены записи в таблице catalog по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\CatalogController.php
+In line 28
+
+Fault: 14-06-2024 15:26:47 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:01 - Отсутствует товар по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\ProductController.php
+In line 26
+
+Fault: 14-06-2024 15:27:01 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:01 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:12 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:12 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:12 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:27:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:29:11 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:29:11 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:19 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:19 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:26 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:26 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:35 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:35 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:40 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:40 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:41 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:42 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:42 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:59 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:30:59 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:03 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:03 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:22 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:22 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:27 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:31:27 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:33:47 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:33:47 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:33:47 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:33:48 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:33:48 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:50 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:50 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:50 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:54 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:55 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:55 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:55 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:55 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:57 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:57 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:34:57 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:55 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:55 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:55 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:55 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:56 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:35:57 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:36:01 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:36:01 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:37:25 - Не найдены записи в таблице catalog по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\CatalogController.php
+In line 28
+
+Fault: 14-06-2024 15:37:47 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:38:06 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:38:13 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:38:33 - Не найдены записи в таблице catalog по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\CatalogController.php
+In line 28
+
+Fault: 14-06-2024 15:38:36 - Не найдены записи в таблице catalog по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\CatalogController.php
+In line 28
+
+Fault: 14-06-2024 15:39:11 - Отсутствует товар по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\ProductController.php
+In line 26
+
+Fault: 14-06-2024 15:39:12 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 15:40:58 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:16 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:17 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:17 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:18 - Не верное имя файла для подключения - core/user/controller/UserfilesController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:18 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:01:18 - Не верное имя файла для подключения - core/user/controller/CoreController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:29:44 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:29:44 - Отсутствует товар по ссылке assets
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\user\controller\ProductController.php
+In line 26
+
+Fault: 14-06-2024 16:37:01 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+Fault: 14-06-2024 16:57:57 - Не верное имя файла для подключения - core/user/controller/AssetsController
+fileC:\Users\Droni4\Desktop\VKR\host\domains\im.my\public_html\core\base\settings\internal_settings.php
+In line 69
+

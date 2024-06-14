@@ -7,4 +7,4 @@ const PATH = '/';
 const HOST = 'localhost';
 const USER = 'root';
 const PASS = '';
-const DB_NAME = 'im';
+const DB_NAME = 'im_new';

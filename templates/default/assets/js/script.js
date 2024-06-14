@@ -192,4 +192,386 @@ $(function () {
         $('.search').addClass(['animated', 'bounceInLeft']);
         $('.header__sidebar').addClass(['animated', 'bounceInUp']);
     }
+
+    $('.qtyItems a').on('click', function (e){
+
+        e.preventDefault();
+
+        let qty = +$(this).text()
+
+        if(qty && !isNaN(qty)){
+
+            $(this).closest('.catalog-section-top-items__toggle').children('span').html(qty)
+
+            $.ajax({
+                url:'/',
+                data:{
+                    qty: qty,
+                    ajax: 'catalog_quantities'
+                }
+            })
+
+            setTimeout(() => {
+
+                location.href = location.pathname
+
+            }, 100)
+
+        }
+
+    })
+
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    let moreBtn = document.querySelector('.card-main-info__description .more-button')
+
+    if(moreBtn){
+
+        moreBtn.addEventListener('click', e => {
+
+            e.preventDefault()
+
+            document.querySelectorAll('.card-tabs__toggle.tabs__toggle')[1].dispatchEvent(new Event('click'))
+
+            window.scrollTo({
+                top: document.querySelector('.card-tabs').getBoundingClientRect().top + scrollY,
+                behavior: 'smooth'
+            })
+
+        })
+
+    }
+
+    (function (){
+
+        let start = 0
+
+        document.querySelectorAll('.card-main-gallery-thumb__slide').forEach(item => {
+
+            item.addEventListener('click', () => {
+
+                let itemCoords = item.getBoundingClientRect()
+
+                let parentCoords = item.parentElement.parentElement.getBoundingClientRect()
+
+                let itemY = scrollY + itemCoords.y
+
+                let parentY = scrollY + parentCoords.y
+
+                let margin = parseFloat(getComputedStyle(item)['marginBottom'])
+
+                let top = Math.ceil(itemCoords.height + margin)
+
+                if(item.nextElementSibling && Math.ceil(itemY - parentY + top) >= parentCoords.height){
+
+                    start -= top
+
+                }else if(item.previousElementSibling && itemY <= parentY){
+
+                    start += top
+
+                }
+
+                item.parentElement.style.transition = '0.3s'
+
+                item.parentElement.style.transform = `translate3d(0px, ${start}px, 0px)`
+
+            })
+
+        })
+
+    })()
+
+    changeQty()
+
+    addToCart()
+
+    document.querySelectorAll('[data-popup]').forEach(item => {
+
+        if(item.getAttribute('data-popup')){
+
+            let popupElement = document.querySelector(`.${item.getAttribute('data-popup')}`)
+
+            if(popupElement){
+
+                item.addEventListener('click', e => {
+
+                    e.preventDefault()
+
+                    popupElement.classList.add('open')
+
+                })
+
+                popupElement.addEventListener('click', e => {
+
+                    if(e.target === popupElement){
+
+                        popupElement.classList.remove('open')
+
+                    }
+
+                })
+
+            }
+
+        }
+
+    })
+
+    let loginVariants = document.querySelectorAll('.login-popup h2 span')
+
+    let loginFormVariants = document.querySelectorAll('.login-popup form')
+
+    loginVariants.forEach(item => {
+
+        item.addEventListener('click', () => {
+
+            let index = [...loginVariants].indexOf(item)
+
+            loginFormVariants[index].style.display = 'block'
+
+            loginFormVariants[+!index].style.display = 'none'
+
+        })
+
+    })
+
+})
+
+function addToCart(){
+
+    document.querySelectorAll('[data-addToCart]').forEach(item => {
+
+        item.addEventListener('click', e => {
+
+            e.preventDefault()
+
+            let cart = {}
+
+            cart.id = +item.getAttribute('data-addToCart')
+
+            if(cart.id && !isNaN(cart.id)){
+
+                let productContainer = item.closest('[data-productContainer]') || document
+
+                cart.qty = 1
+
+                let qtyBlock = productContainer.querySelector('[data-quantity]')
+
+                if(qtyBlock){
+
+                    cart.qty = +qtyBlock.innerHTML || 1
+
+                }
+
+                cart.ajax = 'add_to_cart'
+
+                $.ajax({
+                    url: '/',
+                    data: cart,
+                    errorr: res => {
+                        console.error(res)
+                    },
+                    success: res => {
+
+                        console.log(res)
+
+                        try{
+
+                            res = JSON.parse(res)
+
+                            if(typeof res.current === 'undefined'){
+
+                                throw new Error('')
+
+                            }
+
+                            item.setAttribute('data-toCartAdded', true);
+
+                            ['data-totalQty', 'data-totalSum', 'data-totalOldSum'].forEach(attr => {
+
+                                let cartAttr = attr.replace(/data-/, '').replace(/([^A-Z])([A-Z])/g, '$1_$2').toLowerCase()
+
+                                document.querySelectorAll(`[${attr}]`).forEach(el => {
+
+                                    if(typeof res[cartAttr] !== 'undefined'){
+
+                                        el.innerHTML = res[cartAttr] + (attr === 'data-totalQty' ? '' : ' .руб')
+
+                                    }
+
+                                })
+
+                            })
+
+                        }catch (e){
+
+                            alert('Ошибка добавления в корзину')
+
+                        }
+                    }
+                })
+
+            }
+
+        })
+
+    })
+
+}
+
+function changeQty(){
+
+    document.querySelectorAll('[data-quantityPlus], [data-quantityMinus]').forEach(item => {
+
+        item.addEventListener('click', e => {
+
+            e.preventDefault()
+
+            let productContainer = item.closest('[data-productContainer]') || document
+
+            let qtyEl = productContainer.querySelector('[data-quantity]')
+
+            if(qtyEl){
+
+                let qty = +qtyEl.innerHTML || 1
+
+                if(item.hasAttribute('data-quantityPlus')){
+
+                    qty++
+
+                }else{
+
+                    qty = qty <= 1 ? 1 : --qty
+
+                }
+
+                qtyEl.innerHTML = qty
+
+                let addToCart = productContainer.querySelector('[data-addToCart]')
+
+                if(addToCart){
+
+                    if(addToCart && addToCart.hasAttribute('data-toCartAdded')){
+
+                        addToCart.dispatchEvent(new Event('click'))
+
+                    }
+
+                }
+
+            }
+
+        })
+
+    })
+
+}
+
+document.querySelectorAll('input[type="tel"]').forEach(item => phoneValidate(item))
+
+function phoneValidate(item){
+    //+7(495)111-22-33
+    let countriesOptions = {
+        '+7': {
+            limit: 16,
+            firstDigits: '87',
+            formatChars: {
+                2: '(',
+                6: ')',
+                10: '-',
+                13: '-'
+            }
+        },
+        '+994': {
+            limit: 18,
+            formatChars: {
+                4: '(',
+                8: ')',
+                12: '-',
+                15: '-'
+            }
+        }
+    }
+
+    item.addEventListener('input', e => {
+
+        if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward') {
+
+            return false
+
+        }
+
+        item.value = item.value.replace(/\D/g, '')
+
+        if(item.value){
+
+            for (let code in countriesOptions) {
+
+                if (countriesOptions.hasOwnProperty(code) && countriesOptions[code].firstDigits) {
+
+                    let regExp = new RegExp(`^[${countriesOptions[code].firstDigits}]`)
+
+                    if(regExp.test(item.value)){
+
+                        item.value = item.value.replace(regExp, code)
+
+                        break
+
+                    }
+
+                }
+
+            }
+
+            if(!/^\+/.test(item.value)){
+
+                item.value = '+' + item.value
+
+            }
+
+            for (let code in countriesOptions) {
+
+                if (countriesOptions.hasOwnProperty(code)) {
+
+                    let regExp = new RegExp(code.replace(/\+/g, '\\+'), 'g')
+
+                    if(regExp.test(item.value)){
+
+                        for (let i in countriesOptions[code].formatChars){
+
+                            let j = +i
+
+                            if(item.value[j] && item.value[j] !== countriesOptions[code].formatChars[i]){
+
+                                item.value = item.value.substring(0, j) + countriesOptions[code].formatChars[i] + item.value.substring(j)
+
+                            }
+
+                        }
+
+                        if(item.value[countriesOptions[code].limit]){
+
+                            item.value = item.value.substring(0, countriesOptions[code].limit)
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    })
+
+    item.dispatchEvent(new Event('input'))
+
+    item.addEventListener('change', () => phoneValidate(item))
+
+}
+
+

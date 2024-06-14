@@ -2,21 +2,30 @@
 
 namespace core\base\model;
 
+
 abstract class BaseModelMethods
 {
 
-    protected $sqlFunc = ['RAND()', 'NOW()'];
+    protected $postNumber;
+    protected $linksNumber;
+    protected $numberPages;
+    protected $page;
+    protected $totalCount;
+
+    protected $sqlFunc = ['NOW()', 'RAND()'];
 
     protected $tableRows;
 
+    protected $union = [];
+
     protected function createFields($set, $table = false, $join = false){
 
-        if (array_key_exists('fields', $set) && $set['fields'] === null) return '';
+        if(array_key_exists('fields', $set) && $set['fields'] === null) return '';
 
         $concat_table = '';
         $alias_table = $table;
 
-        if (!$set['no_concat']){
+        if(!$set['no_concat']){
 
             $arr = $this->createTableAlias($table);
 
@@ -30,27 +39,27 @@ abstract class BaseModelMethods
 
         $join_structure = false;
 
-        if (($join || isset($set['join_structure']) && $set['join_structure']) && $table) {
+        if(($join || isset($set['join_structure']) && $set['join_structure']) && $table){
 
             $join_structure = true;
 
             $this->showColumns($table);
 
-            if (isset($this->tableRows[$table]['multi_id_row'])) $set['fields'] = [];
+            if(isset($this->tableRows[$table]['multi_id_row'])) $set['fields'] = [];
 
         }
 
-        if (!isset($set['fields']) || !is_array($set['fields']) || !$set['fields']) {
+        if(!isset($set['fields']) || !is_array($set['fields']) || !$set['fields']){
 
-            if (!$join){
+            if(!$join){
 
                 $fields = $concat_table . '*,';
 
             }else{
 
-                foreach ($this->tableRows[$alias_table] as $key => $item) {
+                foreach ($this->tableRows[$alias_table] as $key => $item){
 
-                    if ($key !== 'id_row' && $key !== 'multi_id_row') {
+                    if($key !== 'id_row' && $key !== 'multi_id_row'){
 
                         $fields .= $concat_table . $key . ' as TABLE' . $alias_table . 'TABLE_' . $key . ',';
 
@@ -58,24 +67,33 @@ abstract class BaseModelMethods
 
                 }
 
-        }
+            }
 
         }else{
 
             $id_field = false;
-            foreach ($set['fields'] as $field) {
 
-                if ($join_structure && !$id_field && $this->tableRows[$alias_table] === $field){
+            foreach($set['fields'] as $field){
+
+                if($join_structure && !$id_field && $this->tableRows[$alias_table] === $field){
 
                     $id_field = true;
 
                 }
 
-                if ($field){
+                if($field || $field === null){
 
-                    if ($join && $join_structure){
+                    if($field === null){
 
-                        if (preg_match('/^(.+)?\s+as\s+(.+)/i', $field, $matches)){
+                        $fields .= "NULL,";
+
+                        continue;
+
+                    }
+
+                    if($join && $join_structure){
+
+                        if(preg_match('/^(.+)?\s+as\s+(.+)/i', $field, $matches)){
 
                             $fields .= $concat_table . $matches[1] . ' as TABLE' . $alias_table . 'TABLE_' . $matches[2] . ',';
 
@@ -85,9 +103,10 @@ abstract class BaseModelMethods
 
                         }
 
+
                     }else{
 
-                        $fields .= $concat_table . $field . ',';
+                        $fields .= (!preg_match('/(\([^()]*\))|(case\s+.+?\s+end)/i', $field) ? $concat_table : '') . $field . ',';
 
                     }
 
@@ -95,9 +114,9 @@ abstract class BaseModelMethods
 
             }
 
-            if (!$id_field && $join_structure){
+            if(!$id_field && $join_structure){
 
-                if ($join){
+                if($join){
 
                     $fields .= $concat_table . $this->tableRows[$alias_table]['id_row'] . ' as TABLE' . $alias_table . 'TABLE_' . $this->tableRows[$alias_table]['id_row'] . ',';
 
@@ -122,11 +141,11 @@ abstract class BaseModelMethods
 
         $order_by = '';
 
-        if (isset($set['order'])  && $set['order']){
+        if(isset($set['order']) && $set['order']){
 
             $set['order'] = (array)$set['order'];
 
-            $set['order_direction'] = (isset($set['order_direction'])  && $set['order_direction'])
+            $set['order_direction'] = (isset($set['order_direction']) && $set['order_direction'])
                 ? (array)$set['order_direction'] : ['ASC'];
 
             $order_by = 'ORDER BY ';
@@ -135,23 +154,25 @@ abstract class BaseModelMethods
 
             foreach ($set['order'] as $order){
 
-                if ($set['order_direction'][$direct_count]){
+                if($set['order_direction'][$direct_count]){
                     $order_direction = strtoupper($set['order_direction'][$direct_count]);
                     $direct_count++;
                 }else{
                     $order_direction = strtoupper($set['order_direction'][$direct_count - 1]);
                 }
 
-                if (in_array($order, $this->sqlFunc)) $order_by .= $order . ',';
-                elseif (is_int($order)) $order_by .= $order . ' ' . $order_direction . ',';
+                if(in_array($order, $this->sqlFunc)) $order_by .= $order . ',';
+                elseif(is_int($order)) $order_by .= $order . ' ' . $order_direction . ',';
                 else $order_by .= $table . $order . ' ' . $order_direction . ',';
             }
 
             $order_by = rtrim($order_by, ',');
-
         }
+
         return $order_by;
+
     }
+
     protected function createWhere($set, $table = false, $instruction = 'WHERE'){
 
         $table = ($table && (!isset($set['no_concat']) || !$set['no_concat']))
@@ -159,64 +180,67 @@ abstract class BaseModelMethods
 
         $where = '';
 
-        if (is_string($set['where'])){
+        if(is_string($set['where'])){
             return $instruction . ' ' . trim($set['where']);
         }
 
-        if (is_array($set['where'])  && !empty($set['where'])){
+        if(is_array($set['where']) && !empty($set['where'])){
 
-            $set['operand'] = (is_array($set['operand'])  && !empty($set['operand'])) ? $set['operand'] : ['='];
-            $set['condition'] = (is_array($set['condition'])  && !empty($set['condition'])) ? $set['condition'] : ['AND'];
+            $set['operand'] = (is_array($set['operand']) && !empty($set['operand'])) ? $set['operand'] : ['='];
+            $set['condition'] = (is_array($set['condition']) && !empty($set['condition'])) ? $set['condition'] : ['AND'];
 
             $where = $instruction;
 
             $o_count = 0;
             $c_count = 0;
 
-            foreach ($set['where'] as $key => $item){
+            foreach ($set['where'] as $key => $item) {
 
                 $where .= ' ';
 
-                if ($set['operand'][$o_count]){
+                if($set['operand'][$o_count]){
                     $operand = $set['operand'][$o_count];
                     $o_count++;
                 }else{
                     $operand = $set['operand'][$o_count - 1];
                 }
-                if ($set['condition'][$c_count]){
+
+                if($set['condition'][$c_count]){
                     $condition = $set['condition'][$c_count];
                     $c_count++;
                 }else{
                     $condition = $set['condition'][$c_count - 1];
                 }
 
-                if ($operand === 'IN' || $operand === 'NOT IN'){
+                if($operand === 'IN' || $operand === 'NOT IN'){
 
-                    if (is_string($item) && strpos($item, 'SELECT') === 0){
+                    if(is_string($item) && strpos($item, 'SELECT') === 0){
                         $in_str = $item;
                     }else{
                         if(is_array($item)) $temp_item = $item;
                         else $temp_item = explode(',', $item);
+
                         $in_str = '';
 
                         foreach ($temp_item as $v){
                             $in_str .= "'" . addslashes(trim($v)) . "',";
                         }
-                    }
-                    $where .= $table . $key . ' '. $operand . ' (' . trim($in_str, ',') . ') ' . $condition;
 
-                } elseif (strpos($operand, 'LIKE') !== false) {
+                    }
+
+                    $where .= $table . $key . ' ' .$operand . ' (' . trim($in_str, ',') . ') ' . $condition;
+
+                }elseif (strpos($operand, 'LIKE') !== false){
 
                     $like_template = explode('%', $operand);
 
-                    foreach ($like_template as $lt_key => $lt) {
-                        if (!$lt) {
-                            if (!$lt_key) {
+                    foreach ($like_template as $lt_key => $lt){
+                        if(!$lt){
+                            if(!$lt_key){
                                 $item = '%' . $item;
-                            } else {
+                            }else{
                                 $item .= '%';
                             }
-
                         }
                     }
 
@@ -224,16 +248,15 @@ abstract class BaseModelMethods
 
                 }else{
 
-                    if (strpos($item, 'SELECT') === 0){
+                    if(strpos($item, 'SELECT') === 0){
                         $where .= $table . $key . $operand . '(' . $item . ") $condition";
-                    }elseif ($item === null || $item === 'NULL') {
-
-                        if($operand === '=') $where.= $table . $key . ' IS NULL ' . $condition;
-                            else $where.= $table . $key . ' IS NOT NULL ' . $condition;
-
+                    }elseif ($item === null || $item === 'NULL'){
+                        if($operand === '=') $where .= $table . $key . ' IS NULL ' . $condition;
+                            else $where .= $table . $key . ' IS NOT NULL ' . $condition;
                     }else{
                         $where .= $table . $key . $operand . "'" . addslashes($item) . "' $condition";
                     }
+
                 }
 
             }
@@ -246,30 +269,30 @@ abstract class BaseModelMethods
 
     }
 
-    protected function createJoin($set, $table, $new_where = false)
-    {
+    protected function createJoin($set, $table, $new_where = false){
+
         $fields = '';
         $join = '';
         $where = '';
 
-        if ($set['join']){
+        if($set['join']){
 
             $join_table = $table;
 
             foreach ($set['join'] as $key => $item){
 
-                if (is_int($key)){
-                    if (!$item['table']) continue;
+                if(is_int($key)){
+                    if(!$item['table']) continue;
                     else $key = $item['table'];
                 }
 
                 $concatTable = $this->createTableAlias($key)['alias'];
 
-                if ($join) $join .= ' ';
+                if($join) $join .= ' ';
 
-                if (isset($item['on']) && $item['on']){
+                if(isset($item['on']) && $item['on']){
 
-                    if (isset($item['on']['fields']) && is_array($item['on']['fields']) && count($item['on']['fields']) === 2){
+                    if(isset($item['on']['fields']) && is_array($item['on']['fields']) && count($item['on']['fields']) === 2){
 
                         $join_fields = $item['on']['fields'];
 
@@ -284,11 +307,11 @@ abstract class BaseModelMethods
                     }
 
                     if(!$item['type']) $join .= 'LEFT JOIN ';
-                    else $join .= trim(strtoupper($item['type'])) . ' JOIN ';
+                    else $join .= trim(strtoupper($item['type'])). ' JOIN ';
 
                     $join .= $key . ' ON ';
 
-                    if ($item['on']['table']) $join_temp_table = $item['on']['table'];
+                    if($item['on']['table']) $join_temp_table = $item['on']['table'];
                     else $join_temp_table = $join_table;
 
                     $join .= $this->createTableAlias($join_temp_table)['alias'];
@@ -297,16 +320,18 @@ abstract class BaseModelMethods
 
                     $join_table = $key;
 
+                    if($new_where){
 
-                    if ($new_where){
-
-                        if ($item['where']){
+                        if($item['where']){
                             $new_where = false;
                         }
+
                         $group_condition = 'WHERE';
+
                     }else{
                         $group_condition = $item['group_condition'] ? strtoupper($item['group_condition']) : 'AND';
                     }
+
                     $fields .= $this->createFields($item, $key, $set['join_structure']);
                     $where .= $this->createWhere($item, $key, $group_condition);
 
@@ -316,20 +341,19 @@ abstract class BaseModelMethods
 
         }
 
-        return compact('fields', 'join', 'where' );
+        return compact('fields', 'join', 'where');
 
     }
 
     protected function createInsert($fields, $files, $except){
 
-
-        $insert_arr  = [];
+        $insert_arr = [];
 
         $insert_arr['fields'] = '(';
 
         $array_type = array_keys($fields)[0];
 
-        if (is_int($array_type)){
+        if(is_int($array_type)){
 
             $check_fields = false;
             $count_fields = 0;
@@ -338,17 +362,17 @@ abstract class BaseModelMethods
 
                 $insert_arr['values'] .= '(';
 
-                if (!$count_fields) $count_fields = count($fields[$i]);
+                if(!$count_fields) $count_fields = count($fields[$i]);
 
                 $j = 0;
 
                 foreach ($item as $row => $value){
 
-                    if ($except && in_array($row, $except)) continue;
+                    if($except && in_array($row, $except)) continue;
 
                     if(!$check_fields) $insert_arr['fields'] .= $row . ',';
 
-                    if (in_array($value, $this->sqlFunc)){
+                    if(in_array($value, $this->sqlFunc)){
                         $insert_arr['values'] .= $value . ',';
                     }elseif ($value == 'NULL' || $value === NULL){
                         $insert_arr['values'] .= "NULL" . ',';
@@ -358,19 +382,19 @@ abstract class BaseModelMethods
 
                     $j++;
 
-                    if ($j === $count_fields) break;
+                    if($j === $count_fields) break;
 
                 }
 
-                if ($j < $count_fields){
-                    for (; $j < $count_fields; $j++){
+                if($j < $count_fields){
+                    for(; $j < $count_fields; $j++){
                         $insert_arr['values'] .= "NULL" . ',';
                     }
                 }
 
                 $insert_arr['values'] = rtrim($insert_arr['values'], ',') . '),';
 
-                if (!$check_fields) $check_fields = true;
+                if(!$check_fields) $check_fields = true;
 
             }
 
@@ -378,15 +402,15 @@ abstract class BaseModelMethods
 
             $insert_arr['values'] = '(';
 
-            if ($fields){
+            if($fields){
 
                 foreach ($fields as $row => $value){
 
-                    if ($except && in_array($row, $except)) continue;
+                    if($except && in_array($row, $except)) continue;
 
                     $insert_arr['fields'] .= $row . ',';
 
-                    if (in_array($value, $this->sqlFunc)){
+                    if(in_array($value, $this->sqlFunc)){
                         $insert_arr['values'] .= $value . ',';
                     }elseif ($value == 'NULL' || $value === NULL){
                         $insert_arr['values'] .= "NULL" . ',';
@@ -397,13 +421,14 @@ abstract class BaseModelMethods
                 }
 
             }
-            if ($files){
 
-
+            if($files){
 
                 foreach ($files as $row => $file){
+
                     $insert_arr['fields'] .= $row . ',';
-                    if (is_array($file)) $insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";
+
+                    if(is_array($file)) $insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";
                         else $insert_arr['values'] .= "'" . addslashes($file) . "',";
                 }
 
@@ -412,6 +437,7 @@ abstract class BaseModelMethods
             $insert_arr['values'] = rtrim($insert_arr['values'], ',') . ')';
 
         }
+
         $insert_arr['fields'] = rtrim($insert_arr['fields'], ',') . ')';
         $insert_arr['values'] = rtrim($insert_arr['values'], ',');
 
@@ -423,24 +449,25 @@ abstract class BaseModelMethods
 
         $update = '';
 
-        if ($fields){
-            foreach ($fields as $row => $value){
+        if($fields){
 
-                if ($except && in_array($row, $except)) continue;
+            foreach($fields as $row => $value){
+
+                if($except && in_array($row, $except)) continue;
 
                 $update .= $row . '=';
 
-                if (in_array($value, $this->sqlFunc)){
+                if(in_array($value, $this->sqlFunc)){
                     $update .= $value . ',';
                 }elseif ($value === NULL || $value === 'NULL'){
                     $update .= "NULL" . ',';
-                }
-                else{
+                }else{
                     $update .= "'" . addslashes($value) . "',";
                 }
 
             }
         }
+
         if($files){
 
             foreach ($files as $row => $file){
@@ -448,12 +475,14 @@ abstract class BaseModelMethods
                 $update .= $row . '=';
 
                 if(is_array($file)) $update .= "'" . addslashes(json_encode($file)) . "',";
-                else $update .= "'" . addslashes($file) . "',";
+                    else $update .= "'" . addslashes($file) . "',";
+
             }
 
         }
 
-        return rtrim($update,',');
+        return rtrim($update, ',');
+
     }
 
     protected function joinStructure($res, $table){
@@ -464,17 +493,17 @@ abstract class BaseModelMethods
 
         foreach ($res as $value){
 
-            if ($value){
+            if($value){
 
-                if (!isset($join_arr[$value[$id_row]])) $join_arr[$value[$id_row]] = [];
+                if(!isset($join_arr[$value[$id_row]])) $join_arr[$value[$id_row]] = [];
 
-                foreach ($value as $key => $item){
+                foreach($value as $key => $item){
 
-                    if (preg_match('/TABLE(.+)?TABLE/u', $key, $matches)){
+                    if(preg_match('/TABLE(.+)?TABLE/u', $key, $matches)){
 
                         $table_name_normal = $matches[1];
 
-                        if (!isset($this->tableRows[$table_name_normal]['multi_id_row'])){
+                        if(!isset($this->tableRows[$table_name_normal]['multi_id_row'])){
 
                             $join_id_row = $value[$matches[0] . '_' . $this->tableRows[$table_name_normal]['id_row']];
 
@@ -492,7 +521,7 @@ abstract class BaseModelMethods
 
                         $row = preg_replace('/TABLE(.+)TABLE_/u', '', $key);
 
-                        if ($join_id_row && !isset($join_arr[$value[$id_row]]['join'][$table_name_normal][$join_id_row][$row])){
+                        if($join_id_row && !isset($join_arr[$value[$id_row]]['join'][$table_name_normal][$join_id_row][$row])){
 
                             $join_arr[$value[$id_row]]['join'][$table_name_normal][$join_id_row][$row] = $item;
 
@@ -514,11 +543,85 @@ abstract class BaseModelMethods
 
     }
 
+    protected function getTotalCount($table, $where){
+
+        return $this->query("SELECT COUNT(*) as count FROM $table $where")[0]['count'];
+
+    }
+
+    public function getPagination(){
+
+        if(!$this->numberPages || $this->numberPages === 1 || $this->page > $this->numberPages){
+
+            return false;
+
+        }
+
+        $res = [];
+
+        if($this->page !== 1){
+
+            $res['first'] = 1;
+
+            $res['back'] = $this->page - 1;
+
+        }
+
+        if($this->page > $this->linksNumber + 1){
+
+            for ($i = $this->page - $this->linksNumber; $i < $this->page; $i++){
+
+                $res['previous'][] = $i;
+
+            }
+
+        }else{
+
+            for ($i = 1; $i < $this->page; $i++){
+
+                $res['previous'][] = $i;
+
+            }
+
+        }
+
+        $res['current'] = $this->page;
+
+        if($this->page + $this->linksNumber < $this->numberPages){
+
+            for ($i = $this->page + 1; $i <= $this->page + $this->linksNumber; $i++){
+
+                $res['next'][] = $i;
+
+            }
+
+        }else{
+
+            for ($i = $this->page + 1; $i <= $this->numberPages; $i++){
+
+                $res['next'][] = $i;
+
+            }
+
+        }
+
+        if($this->page !== $this->numberPages){
+
+            $res['forward'] = $this->page + 1;
+
+            $res['last'] = $this->numberPages;
+
+        }
+
+        return $res;
+
+    }
+
     protected function createTableAlias($table){
 
         $arr = [];
 
-        if (preg_match('/\s+/i', $table)){
+        if(preg_match('/\s+/i', $table)){
 
             $table = preg_replace('/\s{2,}/i', ' ', $table);
 

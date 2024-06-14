@@ -878,7 +878,8 @@ input[type='search'], input[type='text'], input[type='email'] {
 	position: fixed;
 	top: 0;
 	right: 0;
-	z-index: 900
+	z-index: 900;
+	background: #335252;
 }
 
 @media screen and (max-width: 1600px) {
@@ -6365,6 +6366,11 @@ input[type='search'], input[type='text'], input[type='email'] {
 	transition: .3s
 }
 
+.order-desc::before{
+	transform: rotate(-315deg);
+	top: calc(50% - 1px);
+}
+
 @media screen and (max-width: 1024px) {
 	.catalog-section-top-items__toggle::before {
 		width: 8px;
@@ -6459,7 +6465,8 @@ input[type='search'], input[type='text'], input[type='email'] {
 	letter-spacing: .16px;
 	transition: .3s;
 	margin-right: 24px;
-	text-decoration: none
+	text-decoration: none;
+	padding: 3px 4px;
 }
 
 @media screen and (max-width: 600px) {
@@ -7211,7 +7218,9 @@ input[type='search'], input[type='text'], input[type='email'] {
 }
 
 .basket-btn{
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 280px;
 	text-transform: uppercase;
     min-height: 50px;
@@ -7516,4 +7525,101 @@ input[type='search'], input[type='text'], input[type='email'] {
 	.card-main-indfo_toggle{
 		max-width: 100%;
 	}
+}
+
+.qtyItems{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background: white;
+	border: 1px solid #D4DDE1;
+	padding: 5px;
+	display: none;
+}
+
+.qtyItems.opened{
+	display: block;
+}
+
+.qtyItems a{
+	color: black;
+	text-decoration: none;
+}
+
+.pagination-current{
+	border: 1px solid black;
+	padding: 2px 4px;
+}
+
+.cart-btn-wrap [data-totalQty]{
+	width: 15px;
+	height: 15px;
+	border: 1px solid white;
+	background: white;
+	border-radius: 50%;
+	position: absolute;
+	right: calc(50% - 15px);
+	bottom: calc(50% - 15px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+	color: black;
+}
+
+.order-popup, .login-popup{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.6);
+	/*z-index: 10;*/
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.login-popup h2{
+	display: flex;
+	justify-content: space-between;
+}
+
+.login-popup h2 span{
+	cursor: pointer;
+}
+
+.order-popup.open, .login-popup.open{
+	display: flex;
+}
+
+.order-popup__inner{
+	margin: 20px;
+	flex-basis: 600px;
+	padding: 30px 20px;
+	background: white;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.order-popup__inner input, .order-popup__inner textarea{
+	width: 100%;
+	padding: 3px 5px;
+	border: 1px solid black;
+	margin-bottom: 15px;
+}
+
+.order-popup__inner .send-order{
+	display: flex;
+	justify-content: center;
+}
+
+.header__sidebar_btn img{
+	width: 25px;
+	height: 25px;
+	object-fit: contain;
+	filter: brightness(0) invert(1);
 }
