@@ -80,6 +80,7 @@ class CatalogController extends BaseUser
 
             $dbOperand[] = '>=';
 
+
         }
 
         if(isset($_GET['max_price'])){
